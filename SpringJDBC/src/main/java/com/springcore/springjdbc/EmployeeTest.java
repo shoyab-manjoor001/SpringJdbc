@@ -26,10 +26,13 @@ public class EmployeeTest {
 //		@Autowired
 //		EmployeeDaoImpl emp ;
      	EmployeeDaoImpl emp = (EmployeeDaoImpl) context.getBean("employeeDao");
-		int status = emp.saveEmployee(new Employee(111,"Shoyab",50500));
+//		int status = emp.saveEmployee(new Employee(112,"demo name",20500));
 //		int status = edao.deleteEmployee(new Employee(103,"Abcs",25000));
-     	System.out.println(status);
+//     	System.out.println(status);
 		
+     	System.out.println(emp.getEmployee(112));
+     	System.out.println(emp.getEmployees());
+     	
 	}
 
 }

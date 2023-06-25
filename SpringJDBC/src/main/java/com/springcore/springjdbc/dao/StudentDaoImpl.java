@@ -3,16 +3,12 @@ package com.springcore.springjdbc.dao;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import com.springcore.springjdbc.Mappers.RowMapperImpl;
 import com.springcore.springjdbc.entiites.Student;
 
 public class StudentDaoImpl implements StudentDao {
 	
 	private JdbcTemplate template;
-
-//	public JdbcTemplate getTemplate() {
-//		return template;
-//	}
 
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
@@ -33,16 +29,14 @@ public class StudentDaoImpl implements StudentDao {
 		return this.template.update(query,s.getId());
 	}
 
-	@Override
-	public Student getStudent(int studentId) {
-		
+	public Student getStudent(int studentId)
+	{
 		String query = "select * from student where id=?";
 		RowMapperImpl rowMapper = new RowMapperImpl();
 		Student st = this.template.queryForObject(query,rowMapper,studentId);
 		return st;
 	}
 
-	@Override
 	public List<Student> getAllStudents() 
 	{
 		String query = "select * from student";

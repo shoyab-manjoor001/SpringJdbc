@@ -12,7 +12,7 @@ import com.springcore.springjdbc.dao.EmployeeDao;
 import com.springcore.springjdbc.dao.EmployeeDaoImpl;
 
 @Configuration
-//@ComponentScan(basePackages = {"com.springcore.springjdbc"})
+@ComponentScan(basePackages = {"com.springcore.springjdbc"})
 public class JavaConfig 
 {
 
@@ -36,12 +36,12 @@ public class JavaConfig
 		return jdbcTemplate;	
 	}
 	
-	@Bean(name = {"employeeDao"})
-	public EmployeeDao getEmployeeDao()
-	{
-		EmployeeDaoImpl empDaoImpl = new EmployeeDaoImpl();
-		empDaoImpl.setJdbcTemplate(getJdbcTemplate());
-		return empDaoImpl;
-		
-	}
+//	@Bean(name = {"employeeDao"})
+//	public EmployeeDao getEmployeeDao()
+//	{
+//		EmployeeDaoImpl empDaoImpl = new EmployeeDaoImpl();
+//		empDaoImpl.setJdbcTemplate(getJdbcTemplate());
+//		return empDaoImpl;
+//		
+//	}
 }
