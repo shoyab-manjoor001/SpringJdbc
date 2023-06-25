@@ -1,5 +1,7 @@
 package com.springcore.springjdbc;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,11 +32,29 @@ public class App
       
     ApplicationContext context = 
     		new ClassPathXmlApplicationContext("com/springcore/springjdbc/Config.xml");
-    Student s = new Student(112,"Dynamic","Faridabad");
+    Student s = new Student(112,"Dynamic","Modinagar");
     StudentDao sdao =  (StudentDao) context.getBean("sdao");
+
+//    create query...
 //    System.out.println(sdao.saveStudent(s));
+    
+//    delete query...
 //    System.out.println(sdao.deleteStudent(s));
-    System.out.println(sdao.updateStudent(s));
-    	
+
+//    update query...
+//    System.out.println(sdao.updateStudent(s));
+    
+//    gete query..
+      System.out.println("Getting single student form the database...");
+      System.out.println(sdao.getStudent(112));
+
+//   get all data...
+      System.out.println("\nGetting all data form the Student Database...\n");
+      List<Student> students = sdao.getAllStudents();
+      for(Student s1 : students)
+      {
+    	  System.out.println(s1);
+      }
+//      System.out.println(sdao.getAllStudents());
     }
 }

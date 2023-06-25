@@ -1,5 +1,8 @@
 package com.springcore.springjdbc.entiites;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Student {
 	
 	private int id;

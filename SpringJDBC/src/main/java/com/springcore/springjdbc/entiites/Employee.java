@@ -1,11 +1,13 @@
 package com.springcore.springjdbc.entiites;
 
+import org.springframework.stereotype.Component;
+
+@Component("employee")
 public class Employee {
 	
 	private int id;
 	private String name;
 	private int salary;
-	
 	
 	public Employee(int id, String name, int salary) {
 		super();
